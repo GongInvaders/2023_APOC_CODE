@@ -1,0 +1,88 @@
+package org.firstinspires.ftc.teamcode.teamUtil;
+
+public class RobotConstants {
+
+    public enum moduleSides {
+        LEFT, RIGHT
+    }
+
+    public enum enabledModules{
+        LEFT, RIGHT, BOTH
+    }
+
+    public enum configuredSystems {
+        MECANUM,
+        BOTH_MODULES,
+        LEFT_MODULE,
+        RIGHT_MODULE,
+        LIFT,
+        WRIST,
+        INTAKE,
+        GUIDE,
+        ARM,
+        ANTITIP,
+        ENCODER_READ,
+        LIMIT_SWITCH,
+        GAMEPADEX_1,
+        GAMEPADEX_2;
+    }
+    
+    public static final double armBack = 0.85;
+    public static final double armFront = 0;
+    public static final double antiTipDown = 100;
+    public static final double antiTipUp = 0;
+    public static final double armMiddle = (armFront + armBack)/2;
+    public static final double armFrontDelivery = 0.14;//0.12 then 0.06
+    public static final double armBackDelivery = 0.69;
+    public static final double armBackDeliveryBrace = 0.61;
+
+    
+    public static final double wristFront = 0.01;
+    public static final double wristBack = 0.67;
+
+    public static final double guideActive = 0.35;
+    public static final double guideStow = 0.85;
+
+    public static final double intakeOpen = 0.25;
+    public static final double intakeClosed = 0.625;
+
+    //public static final double motorResolution = 134.4; //per revolution //TODO might be wrong
+    public static final double motorResolution = 1120.0; //per revolution
+
+    public static final double colsonCircumference = Math.PI*63.50000006477; //mm
+
+    public static final double moduleMaxAngularVelocity = 1;
+    public static final double moduleMaxAngularAcceleration = 0;
+
+    public static final double robotMaxAngularVelocity = 1;
+    public static final double robotMaxAngularAcceleration = 0;
+
+    public static final double maxSwerveRPS = (114.0/60.0);
+    public static final double maxSwerveVelocity = maxSwerveRPS * colsonCircumference; // (mm/s)
+    public static final double maxSwerveAcceleration = 900;// (mm/s/s)
+
+//    public static double ticksPerDegreeLeftSwerve = 31921.0/3600.0;
+//    public static double ticksPerDegreeRightSwerve = 31921.0/3600.0;
+    public static double ticksPerDegreeLeftSwerve = (motorResolution * (95.0/32.0)/(360.0/2.0));
+    public static double ticksPerDegreeRightSwerve = 31921.0/3600.0;
+
+    public static double ticksPerMMLeftSwerve = 0.4498;
+    public static double ticksPerMMRightSwerve = 0.4498;
+
+    public static final double moduleAngle_kP = 0.1;
+    public static final double robotHeading_kP = 0.3;
+
+    public static final double Kv = 0.1;
+    public static final double Ka = 0.1;
+
+    /**
+     * true value = this/(this+1)
+     */
+    public static final double minimumHeadingEmphasis = 0.25;
+    public static final double minimumHeadingApproachPower = 0.25;
+    public static final double minimumModuleAngleApproachPower = 0.01;
+
+    public static final double swerveDistance = 10;
+
+    public static final boolean robotFlipping = false;
+}
